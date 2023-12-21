@@ -64,7 +64,7 @@ userSchema.methods.isPasswordCorrect = async function(password){
 
 //Generate Access Token using JWT
 userSchema.methods.generateAccessToken = function(){
-    jwt.sign(
+    return jwt.sign(
         {   
             //Payload or data to be encrypted
             _id:this._id,
@@ -81,7 +81,7 @@ userSchema.methods.generateAccessToken = function(){
 }
 //Generate Refresh Token using JWT
 userSchema.methods.generateRefreshToken = function(){
-    jwt.sign(
+    return jwt.sign(
         {   
             //Payload or data to be encrypted
             _id:this._id,
